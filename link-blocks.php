@@ -17,7 +17,7 @@
 // This script will move all non-symlink files in the source folder to the target folder,
 // then create the symlink to the new destination accordingly.
 
-$sourceDir = '/home/thorie/bitcoind-data/blocks';
+$sourceDir = '/home/thorie/.bitcoin/blocks';
 $destDir   = '/mnt3/blocks';
 
 if (!is_dir($sourceDir) || !is_writable($sourceDir)) {
@@ -30,7 +30,7 @@ if (!is_dir($destDir) || !is_writable($destDir)) {
 
 function getChecksum($file) {
 	// Uncomment the following line if you want to skip checksums.
-	return '0';
+	//return '0';
 	return hash_file('crc32b', $file);
 }
 
